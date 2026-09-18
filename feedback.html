@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Glossopedia - Feedback</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+
+        <header class="header-container">
+            <h1 style="text-align: left;">Glossopedia</h1>
+            <img src="./glossopedia-logo-inverted.png" alt="Glossopedia logo">
+        </header>
+
+        <nav>
+            <a href="./main.html">Main Page</a>
+            <a href="">Articles List</a>
+            <a href="">Random Article</a>
+            <a href="">Feedback</a>
+        </nav>
+
+        <div class="container">
+            <main>
+
+                <h2>Feedback</h2>
+
+                <p>
+                    If you have a question, suggestion, or notice an error,
+                    please fill in the form below.
+                </p>
+
+                <form action="#" method="post">
+
+                    <fieldset>
+                        <legend>Personal information</legend>
+
+                        <label for="fullname">Surname and first name:</label>
+                        <input type="text" id="fullname" name="fullname" required>
+
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="1" max="120" required>
+
+                        <label for="education">Education:</label>
+                        <select id="education" name="education" required>
+                            <option value="">Select education</option>
+                            <option value="full">Full secondary</option>
+                            <option value="incomplete">Incomplete secondary</option>
+                            <option value="higher">Higher education</option>
+                            <option value="professional">Professional education</option>
+                        </select>
+                    </fieldset>
+
+                    <label for="purpose">Feedback purpose:</label>
+
+                    <select id="purpose" name="purpose" required>
+                        <option value="">Select purpose</option>
+                        <option value="cooperation">Cooperation</option>
+                        <option value="copyright">Copyright violation complaint</option>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="error">Error report</option>
+                    </select>
+
+                    <label for="details">Details:</label>
+
+                    <textarea id="details" name="details" maxlength="1000" rows="6" required></textarea>
+
+                    <div class="consent">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I agree to the processing of my information.</label>
+                    </div>
+
+                    <button type="submit">Send feedback</button>
+
+                    <button type="reset">Clear form</button>
+                </form>
+
+                <p>
+                    <a href="./main.html">← Back to Main Page</a>
+                </p>
+
+            </main>
+
+            <aside>
+                <h3>Feedback</h3>
+                <p>
+                    Your feedback helps improve Glossopedia.
+                </p>
+                
+                <h3>Contact</h3>
+                <p>
+                    E-mail: glossopedia@example.com
+                </p>
+                <p>
+                    Phone: +380 XX XXX XX XX
+                </p>
+            </aside>
+        </div>
+
+        <footer>
+            <p>&#127279; 2026 Rights are a lie</p>
+        </footer>
+
+    </body>
+</html>
