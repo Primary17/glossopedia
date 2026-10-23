@@ -3,13 +3,38 @@
     <head>
         <meta charset="utf-8">
         <title>Glossopedia - Main</title>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./main.css">
+        <style>
+            header { 
+                position: absolute; right: 0; left: 0; top: 0;
+                background: #333; color: #fff; text-align: center;
+                padding: 20px; margin-top: 0%;
+            }
+
+            nav { margin-top: 120px; position: sticky; top: 0;}
+            
+            .downward-shift {
+                transition: 
+                    translate 0.3s ease,
+                    text-shadow 0.3s ease,
+                    opacity 0.3s ease;
+            }
+            .downward-shift:hover {
+                translate: 0 3%;
+                text-shadow: 1px 2px 3px rgba(50, 100, 100, 0.4); 
+                opacity: 0.75;
+            }
+
+            article > p::first-line { font-family: 'Droid Sans', sans-serif; }
+            #section-goal-container { padding: 0; margin: 60px auto; }
+            #section-goal-container p:first-of-type::first-line { font-style: italic }
+        </style>
     </head>
 
     <body>
         <header class="header-container">
             <h1 style="text-align: left;">Glossopedia</h1>
-            <img src="./glossopedia-logo-inverted.png" alt="Glossopedia logo">
+            <img src="./pictures/glossopedia-logo-inverted.png" alt="Glossopedia logo">
         </header>
 
         <nav>
@@ -21,7 +46,7 @@
 
         <div class="container">
             <main>
-                <article>
+                <article class="downward-shift">
                     <h2 id="section1">What is Glossopedia?</h2>
                     <p>
                         <b>Glossopedia</b> is an online encyclopedia dedicated to constructed languages, unusual writing systems, ciphers, and linguistic artifacts.
@@ -35,7 +60,7 @@
                     </p>
                 </article>
 
-                <article>
+                <article class="scrollable-article">
                     <h2 id="section2">Constructed languages</h2>
                     <p>
                         A <b>constructed language</b> <i>(conlang)</i>, also known as a planned language, is a human language whose sounds, grammar, and words are invented by a person or group, rather than growing naturally over time like natural languages <i>(natlangs)</i>.
@@ -43,14 +68,14 @@
                     <p>
                         They fall into three main categories:
                     </p>
-                    <ul>
+                    <ol reversed>
                         <li><span>Auxiliary languages</span> (auxlangs) are created to facilitate global or cross-cultural communication. These include: Interlingua, <a href="./interglossa.html">Interglossa</a>, Glosa, and Esperanto.</li>
                         <li><span>Artistic languages</span> (artlangs) are created to add realism and depth to the fictional worlds depicted in books and movies. Examples include Quenya (Tolkien), Klingon (Star Trek), and Dothraki (Game of Thrones).</li>
                         <li><span>Engineered languages</span> (engelangs) are languages specifically created to test scientific, logical, or philosophical ideas.  Some examples include: Toki Pona (minimalist), Lojban (logical), Láadan (gender-neutral), and Ithkuil (advanced morphology).</li>
-                    </ul>
+                    </ol>
                 </article>
 
-                <article>
+                <article class="scrollable-article">
                     <h2 id="section3">Unusual writing systems</h2>
                     <p>
                         <b>Unusual writing systems</b> are systems of writing, encoding, or concealing information that are distinguished by their specialized purposes, unusual structures, or historical and cultural significance.
@@ -62,7 +87,7 @@
                         Examples include:
                     </p>
                     <ul>
-                        <li> <a href="ogham.html"><span>Ogham</span></a> is an early medieval writing system primarily used to represent the early Irish language. Its characters are formed from groups of strokes arranged along a central line.</li>
+                        <li> <a href="ogham.html">Ogham</a> is an early medieval writing system primarily used to represent the early Irish language. Its characters are formed from groups of strokes arranged along a central line.</li>
                         <li><span>Notarikon</span> is a method of abbreviation and textual interpretation in which words or phrases are represented by their initial or other selected letters. It is particularly associated with Jewish textual traditions.</li>
                         <li><span>Temurah</span> is a traditional method of transforming letters in a text according to established substitution rules. It is associated with Jewish interpretive and cryptographic traditions.</li>
                     </ul>
@@ -71,7 +96,7 @@
                     </p>
                 </article>
 
-                <article>
+                <article class="scrollable-article">
                     <h2 id="section4">Linguistic and pseudolinguistic artifacts</h2>
                     <p>
                         <b>Linguistic and pseudolinguistic artifacts</b> are objects, texts, writing systems, or constructed forms of language that attract attention because of their unusual linguistic properties, uncertain origins, or relationship to known languages.
@@ -93,7 +118,7 @@
                     </p>
                 </article>
 
-                <article>
+                <article class="downward-shift">
                     <h2 id="section-authors">About the encyclopedia</h2>
                     <table>
                         <caption>General information about Glossopedia</caption>
@@ -142,7 +167,7 @@
                     </table>
                 </article>
 
-                <article>
+                <article id="section-goal-container">
                     <h2 id="section-goal">Goal and objectives</h2>
                     <p>
                         The goal of Glossopedia is to create an accessible online encyclopedia dedicated to unusual linguistic phenomena, constructed languages, and specialized writing systems.

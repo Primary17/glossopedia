@@ -4,21 +4,22 @@
     <head>
         <meta charset="utf-8">
         <title>Glossopedia - Feedback</title>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./main.css">
+        <link rel="stylesheet" href="./feedback.css">
     </head>
 
     <body>
 
         <header class="header-container">
             <h1 style="text-align: left;">Glossopedia</h1>
-            <img src="./glossopedia-logo-inverted.png" alt="Glossopedia logo">
+            <img src="./pictures/glossopedia-logo-inverted.png" alt="Glossopedia logo">
         </header>
 
         <nav>
             <a href="./main.html">Main Page</a>
             <a href="">Articles List</a>
             <a href="">Random Article</a>
-            <a href="">Feedback</a>
+            <a href="feedback.html">Feedback</a>
         </nav>
 
         <div class="container">
@@ -70,7 +71,7 @@
                     <textarea id="details" name="details" maxlength="1000" rows="6" required></textarea>
 
                     <div class="consent">
-                        <input type="checkbox" id="consent" name="consent" required>
+                        <input type="checkbox" id="consent" name="consent" required >
                         <label for="consent">I agree to the processing of my information.</label>
                     </div>
 
@@ -92,10 +93,10 @@
                 </p>
                 
                 <h3>Contact</h3>
-                <p>
+                <p tabindex="0" class="greenbg-on-focus">
                     E-mail: glossopedia@example.com
                 </p>
-                <p>
+                <p tabindex="0" class="greenbg-on-focus">
                     Phone: +380 XX XXX XX XX
                 </p>
             </aside>
@@ -104,6 +105,5 @@
         <footer>
             <p>&#127279; 2026 Rights are a lie</p>
         </footer>
-
     </body>
 </html>
