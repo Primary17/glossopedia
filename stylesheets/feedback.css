@@ -1,3 +1,17 @@
+body { display: flex; flex-direction: column; align-items: stretch; }
+
+.header-container { display: flex; justify-content: space-between;}
+.header-container img { height: 62px; width: auto; display: block;}
+
+.container {
+    display: flex; justify-content: center;
+    align-items: stretch; align-content: flex-start; 
+    gap: 40px; margin: 20px 10px; padding: 0 20px;
+}
+
+main { order: 1; }
+aside { order: 2; }
+
 form { max-width: 650px; }
 fieldset { margin-bottom: 20px; padding: 20px; }
 legend { font-weight: bold; }
@@ -10,15 +24,6 @@ textarea { width: 100%; height: 150px; max-width: 100%; resize: vertical; }
 .consent input { width: auto; margin: 0; }
 button { padding: 10px 20px; margin-right: 10px; cursor: pointer; }
 
-.container {
-    display: flex; flex-flow: row wrap; justify-content: space-between;
-    align-items: flex-start; align-content: flex-start; 
-    gap: 20px; max-width: 1200px; margin: 20px auto; padding: 0 20px;
-}
-
-main { order: 1; flex-grow: 3; flex-basis: 420px; }
-aside { order: 2; flex-grow: 1; flex-basis: 240px; height: 100%; }
-
 [required] { border: 1px solid #2b2ba0; border-left-width: 4px; }
 
 input[type="checkbox"] {
@@ -26,7 +31,7 @@ input[type="checkbox"] {
   accent-color: #2b2ba0; cursor: pointer;
 }
 
-fieldset { position: relative; }
+fieldset { position: relative; top: 10px; left: 10px; margin-bottom: 35px; }
 fieldset::after {
     content: "* this data will not be disclosed";
     position: absolute;
