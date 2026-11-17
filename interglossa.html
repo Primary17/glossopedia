@@ -6,7 +6,9 @@
         <title>Glossopedia - Interglossa</title>
         <link rel="stylesheet" href="./stylesheets/main.css">
         <link rel="stylesheet" href="./stylesheets/structure.css">
-        <link rel="stylesheet" href="./stylesheets/article.css"
+        <link rel="stylesheet" href="./stylesheets/article.css">
+        <script src="scripts/accordion.js" defer></script>
+        <script src="scripts/article-search.js" defer></script>
     </head>
 
     <body>
@@ -15,7 +17,29 @@
             <img src="./pictures/glossopedia-logo-inverted.png" alt="Glossopedia logo">
         </header>
 
+        <div class="topic-accordion">
+            <button type="button" class="topic-accordion-toggle" aria-expanded="false" aria-controls="topic-list">Topics</button>
+            <ul id="topic-list" class="topic-list" hidden>
+                <li>
+                    <a href="#top">What is Interglossa?</a>
+                    <p>Auxiliary language by Lancelot Hogben, published in 1943 and built from Greek and Latin roots.</p>
+                </li>
+                <li>
+                    <a href="#section-info">General information</a>
+                    <p>Creator, year of publication, vocabulary, and the purpose of the language.</p>
+                </li>
+                <li>
+                    <a href="#section-vocabulary">Examples of vocabulary</a>
+                    <p>A short list of Interglossa words and their meanings.</p>
+                </li>
+            </ul>
+        </div>
+
         <nav>
+            <form class="article-search" role="search">
+                <label for="article-search">Пошук</label>
+                <input type="search" id="article-search" name="q" autocomplete="off">
+            </form>
             <a href="./main.html">Main Page</a>
             <a href="">Articles List</a>
             <a href="">Random Article</a>
@@ -25,7 +49,7 @@
         <main>
             <article class="with-image">
                 <div>
-                    <h2>What is Interglossa?</h2>
+                    <h2 id="top">What is Interglossa?</h2>
                     <p>
                         <b>Interglossa</b> is a constructed auxiliary language created by Lancelot Hogben and published in 1943.
                         It was designed as a simplified international language based largely on Greek and Latin roots.
@@ -40,7 +64,7 @@
             </article>
 
             <article>
-                <h2>General information</h2>
+                <h2 id="section-info">General information</h2>
                 <table>
                     <tr>
                         <th>Property</th>
@@ -75,7 +99,7 @@
             </article>
 
             <article>
-                <h2>Examples of vocabulary</h2>
+                <h2 id="section-vocabulary">Examples of vocabulary</h2>
 
                 <table>
                     <tr>

@@ -11,6 +11,54 @@ nav {
 
 main, aside { margin-top: 160px; }
 
+.topic-accordion-toggle {
+    position: fixed; top: 120px; left: 0; z-index: 4;
+    margin: 0; padding: 10px 16px; border: 0;
+    background: #555; color: #fff; font: inherit;
+    cursor: pointer;
+}
+
+.topic-accordion-toggle::after { content: " ▾"; }
+
+.topic-accordion-toggle[data-expanded="true"]::after { content: " ▴"; }
+
+.topic-list {
+    position: fixed; top: 160px; left: 0; z-index: 4;
+    width: 280px; max-height: 70vh; margin: 0; padding: 0;
+    overflow: auto; list-style: none; text-align: left;
+    background: #f7f7f7; border: 1px solid #999;
+}
+
+.topic-list li { padding: 10px 12px; border-bottom: 1px solid #ddd; }
+
+.topic-list a:link,
+.topic-list a:visited {
+    color: #118; margin: 0; font-weight: bold; text-decoration: none;
+}
+
+.topic-list p { margin: 4px 0 0; color: #333; font-size: 0.9em; }
+
+h2 { scroll-margin-top: 180px; }
+
+.article-search {
+    position: fixed; top: 120px; right: 0; z-index: 4;
+    display: flex; align-items: center; gap: 8px;
+    height: 38px; margin: 0; padding: 0 12px;
+    background: #444;
+}
+
+.article-search label { margin: 0; color: #fff; }
+
+.article-search input {
+    width: 180px; padding: 4px 8px; border: 1px solid #ccc;
+    font: inherit; background: #fff; color: #333;
+}
+
+mark.search-hit {
+    background: #ffe56a; color: #000;
+    scroll-margin-top: 180px;
+}
+
 article {
     border: 4px double #009; border-bottom: medium solid #009;
     padding: 12px; margin-bottom: 20px;

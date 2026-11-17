@@ -2,6 +2,7 @@
 <html lang="ua">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Glossopedia - Main</title>
         <link rel="stylesheet" href="./stylesheets/structure.css">
         <link rel="stylesheet" href="./stylesheets/main.css">
@@ -9,10 +10,42 @@
             header { 
                 position: absolute; right: 0; left: 0; top: 0;
                 background: #333; color: #fff; text-align: center;
-                padding: 20px; margin-top: 0%;
+                padding: 20px; margin-top: 0%; overflow: hidden;
             }
 
-            nav { margin-top: 120px; position: sticky; top: 0;}
+            nav {
+                margin-top: 120px; position: sticky; top: 0; z-index: 3;
+                display: flex; flex-direction: row;
+                justify-content: center; align-items: center;
+            }
+
+            body.nav-vertical {
+                column-gap: 0;
+                grid-template-columns: 180px 1fr;
+                grid-template-areas:
+                    "nav header"
+                    "nav content"
+                    "nav sidebar"
+                    "nav footer";
+            }
+
+            body.nav-vertical header {
+                position: relative; left: auto; right: auto; top: auto;
+                grid-area: header;
+            }
+
+            body.nav-vertical nav {
+                position: static; grid-area: nav;
+                margin: 0; align-self: stretch;
+                flex-direction: column;
+                justify-content: flex-start; align-items: stretch;
+                text-align: left;
+            }
+
+            body.nav-vertical nav a { display: block; margin: 10px 14px; }
+
+            body.nav-vertical main { margin-top: 0; margin-left: 0; padding-left: 16px; }
+            body.nav-vertical aside { margin-top: 0; margin-right: 0; }
             
             .downward-shift {
                 transition: 
@@ -29,13 +62,37 @@
             article > p::first-line { font-family: 'Droid Sans', sans-serif; }
             #section-goal-container { padding: 0; margin: 60px auto; }
             #section-goal-container p:first-of-type::first-line { font-style: italic }
+
+            .snow-container {
+                position: absolute; inset: 0; pointer-events: none;
+            }
+
+            .snow-background { z-index: 1; color: lightsteelblue;}
+            .header-container { position: relative; z-index: 2; }
+            .snow-foreground { z-index: 3; color: whitesmoke}
+
+            .snowflake {
+                position: absolute; left: -100px; top: 50%;
+                line-height: 1; animation: moveSnow linear forwards;
+            }
+
+            @keyframes moveSnow {
+                from { transform: translateX(0); }
+                to { transform: translateX(calc(100vw + 200px)); }
+            }
         </style>
+        <script src="scripts/snowflakes.js" defer></script>
+        <script src="scripts/main-nav.js" defer></script>
     </head>
 
     <body>
-        <header class="header-container">
-            <h1 style="text-align: left;">Glossopedia</h1>
-            <img src="./pictures/glossopedia-logo-inverted.png" alt="Glossopedia logo">
+        <header>
+            <div class="snow-container snow-background"></div>
+            <div class="header-container">
+                <h1 style="text-align: left;">Glossopedia</h1>
+                <img src="./pictures/glossopedia-logo-inverted.png" alt="Glossopedia logo">
+            </div>
+            <div class="snow-container snow-foreground"></div>
         </header>
 
         <nav>
