@@ -3,12 +3,14 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Glossopedia - Interglossa</title>
+        <link rel="stylesheet" href="./stylesheets/normalize.css">
         <link rel="stylesheet" href="./stylesheets/main.css">
         <link rel="stylesheet" href="./stylesheets/structure.css">
         <link rel="stylesheet" href="./stylesheets/article.css">
-        <script src="scripts/accordion.js" defer></script>
-        <script src="scripts/article-search.js" defer></script>
+        <script type="module" src="scripts/accordion.js" defer></script>
+        <script type="module" src="scripts/article-search.js" defer></script>
     </head>
 
     <body>
@@ -17,34 +19,37 @@
             <img src="./pictures/glossopedia-logo-inverted.png" alt="Glossopedia logo">
         </header>
 
-        <div class="topic-accordion">
-            <button type="button" class="topic-accordion-toggle" aria-expanded="false" aria-controls="topic-list">Topics</button>
-            <ul id="topic-list" class="topic-list" hidden>
-                <li>
-                    <a href="#top">What is Interglossa?</a>
-                    <p>Auxiliary language by Lancelot Hogben, published in 1943 and built from Greek and Latin roots.</p>
-                </li>
-                <li>
-                    <a href="#section-info">General information</a>
-                    <p>Creator, year of publication, vocabulary, and the purpose of the language.</p>
-                </li>
-                <li>
-                    <a href="#section-vocabulary">Examples of vocabulary</a>
-                    <p>A short list of Interglossa words and their meanings.</p>
-                </li>
-            </ul>
-        </div>
+        <div class="navigation-container">
+            <div class="topic-accordion">
+                <button type="button" class="topic-accordion-toggle" aria-expanded="false" aria-controls="topic-list">Topics</button>
+                <ul id="topic-list" class="topic-list" hidden>
+                    <li>
+                        <a href="#top">What is Interglossa?</a>
+                        <p>Auxiliary language by Lancelot Hogben, published in 1943 and built from Greek and Latin roots.</p>
+                    </li>
+                    <li>
+                        <a href="#section-info">General information</a>
+                        <p>Creator, year of publication, vocabulary, and the purpose of the language.</p>
+                    </li>
+                    <li>
+                        <a href="#section-vocabulary">Examples of vocabulary</a>
+                        <p>A short list of Interglossa words and their meanings.</p>
+                    </li>
+                </ul>
+            </div>
 
-        <nav>
+            <nav>
+                <a href="./main.html">Main Page</a>
+                <a href="">Articles List</a>
+                <a href="">Random Article</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+
             <form class="article-search" role="search">
-                <label for="article-search">Пошук</label>
+                <label for="article-search">Пошук: </label>
                 <input type="search" id="article-search" name="q" autocomplete="off">
             </form>
-            <a href="./main.html">Main Page</a>
-            <a href="">Articles List</a>
-            <a href="">Random Article</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
+        </div>
 
         <main>
             <article class="with-image">

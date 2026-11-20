@@ -3,12 +3,14 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Glossopedia - Ogham</title>
+        <link rel="stylesheet" href="./stylesheets/normalize.css">
         <link rel="stylesheet" href="./stylesheets/main.css">
         <link rel="stylesheet" href="./stylesheets/structure.css">
         <link rel="stylesheet" href="./stylesheets/article.css">
-        <script src="scripts/accordion.js" defer></script>
-        <script src="scripts/article-search.js" defer></script>
+        <script type="module" src="scripts/accordion.js" defer></script>
+        <script type="module" src="scripts/article-search.js" defer></script>
     </head>
 
     <body>
@@ -17,39 +19,42 @@
             <img src="./pictures/glossopedia-logo-inverted.png" alt="Glossopedia logo">
         </header>
 
-        <div class="topic-accordion">
-            <button type="button" class="topic-accordion-toggle" aria-expanded="false" aria-controls="topic-list">Topics</button>
-            <ul id="topic-list" class="topic-list" hidden>
-                <li>
-                    <a href="#top">Ogham</a>
-                    <p>Early medieval writing system of strokes along a central line, used mainly for Irish.</p>
-                </li>
-                <li>
-                    <a href="#section-info">General information</a>
-                    <p>Type, region, period, characters, and the main use of the script.</p>
-                </li>
-                <li>
-                    <a href="#section-classification">Character classification</a>
-                    <p>Traditional groups of five letters, called aicmí, and the meaning of selected signs.</p>
-                </li>
-                <li>
-                    <a href="#section-characters">Examples of characters</a>
-                    <p>Illustration of Ogham letters as they appear in inscriptions.</p>
-                </li>
-            </ul>
-        </div>
+        <div class="navigation-container">
+            <div class="topic-accordion">
+                <button type="button" class="topic-accordion-toggle" aria-expanded="false" aria-controls="topic-list">Topics</button>
+                <ul id="topic-list" class="topic-list" hidden>
+                    <li>
+                        <a href="#top">Ogham</a>
+                        <p>Early medieval writing system of strokes along a central line, used mainly for Irish.</p>
+                    </li>
+                    <li>
+                        <a href="#section-info">General information</a>
+                        <p>Type, region, period, characters, and the main use of the script.</p>
+                    </li>
+                    <li>
+                        <a href="#section-classification">Character classification</a>
+                        <p>Traditional groups of five letters, called aicmí, and the meaning of selected signs.</p>
+                    </li>
+                    <li>
+                        <a href="#section-characters">Examples of characters</a>
+                        <p>Illustration of Ogham letters as they appear in inscriptions.</p>
+                    </li>
+                </ul>
+            </div>
 
-        <nav>
+            <nav>
+                <a href="./main.html">Main Page</a>
+                <a href="">Articles List</a>
+                <a href="">Random Article</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+
             <form class="article-search" role="search">
-                <label for="article-search">Пошук</label>
+                <label for="article-search">Пошук: </label>
                 <input type="search" id="article-search" name="q" autocomplete="off">
             </form>
-            <a href="./main.html">Main Page</a>
-            <a href="">Articles List</a>
-            <a href="">Random Article</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-
+        </div>
+        
         <main>
             <article>
                 <h2 id="top">Ogham</h2>

@@ -1,27 +1,135 @@
 body {
-    display: grid; min-height: 100vh; 
-  
-    grid-template-columns: 1fr 300px;
-    grid-template-rows: auto 1fr auto;
+    display: grid;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, 19rem);
+    grid-template-rows: auto auto 1fr auto;
 
     grid-template-areas:
         "header header"
+        "navigation navigation"
         "content sidebar"
         "footer footer";
 
-    gap: 20px;
+    column-gap: 1.25rem;
+    row-gap: 0;
 }
 
-header { grid-area: header; }
-nav {grid-area: header; }
-aside { grid-area: sidebar; margin-right: 20px;}
-main { grid-area: content; margin-left: 40px}
-footer { grid-area: footer; }
+header {
+    grid-area: header;
+}
 
-.header-container { display: grid; grid-template-columns: 1fr auto;}
-.header-container img { height: 62px; width: auto; float: right; display: block;}
+.navigation-container {
+    grid-area: navigation;
+    min-width: 0;
+}
+
+body > nav {
+    grid-area: navigation;
+}
+
+main {
+    grid-area: content;
+    min-width: 0;
+
+    margin-top: 1.25rem;
+    padding-left: 1.25rem;
+}
+
+aside {
+    grid-area: sidebar;
+    min-width: 0;
+
+    margin-top: 1.25rem;
+}
+
+footer {
+    grid-area: footer;
+    margin-top: 1.25rem;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.header-container img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 3.875rem;
+}
+
 
 .scrollable-article {
-    max-height: 250px; overflow-y: auto;
-    padding: 0 10px; border: 1px solid #d8d8d8;
+    max-height: 15.625rem;
+    overflow-y: auto;
+    padding: 0 0.625rem;
+    border: 1px solid #d8d8d8;
+}
+
+@media screen and (max-width: 760px) {
+
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto auto auto auto;
+
+        grid-template-areas:
+            "header"
+            "navigation"
+            "content"
+            "sidebar"
+            "footer";
+
+        column-gap: 0;
+    }
+
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    aside {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .header-container img {
+        height: auto;
+        max-height: 3.875rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    main {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    aside {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+    }
+
+    .header-container {
+        gap: 0.625rem;
+    }
+}
+
+@media screen and (max-height: 560px) and (orientation: landscape) {
+
+    .scrollable-article {
+        max-height: 30vh;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header-container {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+    }
 }

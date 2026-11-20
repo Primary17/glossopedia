@@ -4,42 +4,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Glossopedia - Main</title>
+        <link rel="stylesheet" href="./stylesheets/normalize.css">
         <link rel="stylesheet" href="./stylesheets/structure.css">
         <link rel="stylesheet" href="./stylesheets/main.css">
         <style>
-            header { 
-                position: absolute; right: 0; left: 0; top: 0;
-                background: #333; color: #fff; text-align: center;
-                padding: 20px; margin-top: 0%; overflow: hidden;
+            header {
+                position: relative;
+                margin: 0;
+                overflow: hidden;
             }
 
-            nav {
-                margin-top: 120px; position: sticky; top: 0; z-index: 3;
-                display: flex; flex-direction: row;
-                justify-content: center; align-items: center;
-            }
-
-            body.nav-vertical {
-                column-gap: 0;
-                grid-template-columns: 180px 1fr;
-                grid-template-areas:
-                    "nav header"
-                    "nav content"
-                    "nav sidebar"
-                    "nav footer";
-            }
-
-            body.nav-vertical header {
-                position: relative; left: auto; right: auto; top: auto;
-                grid-area: header;
-            }
-
-            body.nav-vertical nav {
-                position: static; grid-area: nav;
-                margin: 0; align-self: stretch;
-                flex-direction: column;
-                justify-content: flex-start; align-items: stretch;
-                text-align: left;
+            .navigation-container {
+                position: sticky;
+                top: 0;
             }
 
             body.nav-vertical nav a { display: block; margin: 10px 14px; }
@@ -81,8 +58,7 @@
                 to { transform: translateX(calc(100vw + 200px)); }
             }
         </style>
-        <script src="scripts/snowflakes.js" defer></script>
-        <script src="scripts/main-nav.js" defer></script>
+        <script type="module" src="scripts/snowflakes.js" defer></script>
     </head>
 
     <body>
@@ -94,13 +70,15 @@
             </div>
             <div class="snow-container snow-foreground"></div>
         </header>
-
-        <nav>
-            <a href="./main.html">Main Page</a>
-            <a href="">Articles List</a>
-            <a href="">Random Article</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
+        
+        <div class="navigation-container" style="justify-content: center;">
+            <nav>
+                <a href="./main.html">Main Page</a>
+                <a href="">Articles List</a>
+                <a href="">Random Article</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+        </div>
 
         <main>
             <article class="downward-shift">

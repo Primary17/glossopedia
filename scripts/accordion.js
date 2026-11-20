@@ -3,6 +3,7 @@ const list = document.getElementsByClassName("topic-list")[0];
 
 function placeList() {
     list.style.top = toggle.getBoundingClientRect().bottom + "px";
+    list.style.left = toggle.getBoundingClientRect().left + "px";
 }
 
 toggle.addEventListener("click", () => {

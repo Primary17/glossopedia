@@ -1,84 +1,274 @@
-header { 
-    position: fixed; right: 0; left: 0; top: 0;
-    background: #333; color: #fff; text-align: center;
-    padding: 20px; margin-top: 0%;
+:root {
+    --header-height: 6.25rem;
+    --navigation-height: 2.75rem;
+
+    --content-offset: calc(
+        var(--header-height) + var(--navigation-height)
+    );
 }
 
-nav {
+header {
     position: fixed;
-    right: 0; left: 0; top: 120px;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+
+    box-sizing: border-box;
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #333;
+    color: #fff;
+    text-align: center;
+
+    padding: 0 1.25rem;
+    margin: 0;
 }
 
-main, aside { margin-top: 160px; }
+.navigation-container {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    left: 0;
+    z-index: 3;
 
-.topic-accordion-toggle {
-    position: fixed; top: 120px; left: 0; z-index: 4;
-    margin: 0; padding: 10px 16px; border: 0;
-    background: #555; color: #fff; font: inherit;
-    cursor: pointer;
-}
+    box-sizing: border-box;
+    height: var(--navigation-height);
 
-.topic-accordion-toggle::after { content: " ▾"; }
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
-.topic-accordion-toggle[data-expanded="true"]::after { content: " ▴"; }
-
-.topic-list {
-    position: fixed; top: 160px; left: 0; z-index: 4;
-    width: 280px; max-height: 70vh; margin: 0; padding: 0;
-    overflow: auto; list-style: none; text-align: left;
-    background: #f7f7f7; border: 1px solid #999;
-}
-
-.topic-list li { padding: 10px 12px; border-bottom: 1px solid #ddd; }
-
-.topic-list a:link,
-.topic-list a:visited {
-    color: #118; margin: 0; font-weight: bold; text-decoration: none;
-}
-
-.topic-list p { margin: 4px 0 0; color: #333; font-size: 0.9em; }
-
-h2 { scroll-margin-top: 180px; }
-
-.article-search {
-    position: fixed; top: 120px; right: 0; z-index: 4;
-    display: flex; align-items: center; gap: 8px;
-    height: 38px; margin: 0; padding: 0 12px;
     background: #444;
 }
 
-.article-search label { margin: 0; color: #fff; }
-
-.article-search input {
-    width: 180px; padding: 4px 8px; border: 1px solid #ccc;
-    font: inherit; background: #fff; color: #333;
+.topic-accordion {
+    position: relative;
+    flex: 0 0 auto;
 }
 
-mark.search-hit {
-    background: #ffe56a; color: #000;
-    scroll-margin-top: 180px;
+.topic-accordion a {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-article {
-    border: 4px double #009; border-bottom: medium solid #009;
-    padding: 12px; margin-bottom: 20px;
+.topic-accordion p {
+    margin-top: 0;
+    margin-left: 15%;
+    margin-right: 5%;
 }
 
-article img {
-    border: 3px solid #009; max-width: 100%; height: auto;
-    transition: filter 0.6s ease;
+.topic-accordion-toggle {
+    display: block;
+    position: static;
+
+    margin: 0;
+    padding: 0.625rem 1rem;
+    border: 0;
+
+    background: #555;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+
+    white-space: nowrap;
 }
 
-article img:hover {
-    filter: sepia(0.9) contrast(0.85) brightness(0.9) saturate(0.8);
-    border-color: #666; 
+.topic-accordion-toggle::after {
+    content: " ▾";
 }
 
-.author {
-    font-weight: lighter; font-size: smaller; font-style: italic;
-    text-align: right; margin: -10px 5px; color: #006;
+.topic-accordion-toggle[data-expanded="true"]::after {
+    content: " ▴";
 }
 
-main a:visited, aside a:visited { color: hsl(40, 40%, 50%) }
+nav {
+    position: static;
+    flex: 1 1 auto;
+    min-width: 0;
 
-.with-image { display: grid; grid-template-columns: 1fr auto;}
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    white-space: nowrap;
+}
+
+.article-search {
+    flex: 0 0 auto;
+
+    color: #fff;
+    margin: 0 0.5rem;
+
+    z-index: 4;
+}
+
+.topic-list {
+    position: fixed;
+    top: var(--content-offset);
+    left: 0;
+    z-index: 4;
+
+    box-sizing: border-box;
+    width: 17.5rem;
+    max-width: 100%;
+
+    max-height: 70vh;
+    max-height: 70dvh;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: auto;
+    list-style: none;
+    text-align: left;
+
+    background: #f7f7f7;
+    border: 1px solid #999;
+}
+
+main,
+aside {
+    position: relative;
+    top: var(--content-offset);
+}
+
+@media screen and (max-width: 850px) {
+    header {
+        height: auto;
+        min-height: var(--header-height);
+        padding: 1rem;
+    }
+
+    .navigation-container {
+        height: auto;
+        min-height: var(--navigation-height);
+
+        flex-wrap: wrap;
+        padding: 0.25rem;
+    }
+
+    .topic-accordion {
+        order: 2;
+    }
+
+    .article-search {
+        order: 3;
+        margin-left: auto;
+    }
+
+    nav {
+        order: 1;
+        flex: 1 0 100%;
+        flex-wrap: wrap;
+    }
+
+    main,
+    aside {
+        top: calc(var(--content-offset) + var(--navigation-height));
+    }
+
+    .topic-list {
+        top: auto;
+        max-height: 60vh;
+        max-height: 60dvh;
+    }
+}
+
+@media screen and (max-height: 560px) and (orientation: landscape) {
+
+    header,
+    .navigation-container {
+        position: static;
+    }
+
+    header {
+        height: auto;
+        min-height: var(--header-height);
+        padding: 0.75rem 1rem;
+    }
+
+    .navigation-container {
+        height: auto;
+        min-height: var(--navigation-height);
+        flex-wrap: wrap;
+        padding: 0.25rem;
+    }
+
+    main,
+    aside {
+        margin-top: 1.25rem;
+    }
+
+    .topic-list {
+        max-height: 50vh;
+        max-height: 50dvh;
+    }
+}
+
+
+@media screen and (max-width: 520px) {
+
+    .topic-list {
+        width: 100%;
+    }
+
+    .article-search input {
+        width: 12rem;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .article-search {
+        font-size: 0.95rem;
+    }
+
+    .topic-accordion-toggle {
+        width: 7.5rem;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .article-search input {
+        width: 8rem;
+    }
+
+    .article-search {
+        font-size: 0.9rem;
+    }
+
+    .topic-accordion-toggle {
+        width: 5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .article-search input {
+        width: 6.5rem;
+    }
+
+    .article-search {
+        font-size: 0.85rem;
+    }
+
+    .topic-accordion-toggle {
+        width: 4rem;
+        font-size: 0.85rem;
+    }
+}

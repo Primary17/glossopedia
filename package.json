@@ -1,0 +1,26 @@
+{
+  "name": "glossopedia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Primary17/glossopedia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Primary17/glossopedia/issues"
+  },
+  "homepage": "https://github.com/Primary17/glossopedia#readme",
+  "devDependencies": {
+    "vite": "^8.3.8"
+  }
+}
